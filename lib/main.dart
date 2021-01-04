@@ -37,10 +37,10 @@ class _MyHomePageState extends State<MyHomePage> {
   final _maxValue = 1000;
   final List<String> methods = ['Quick sort'];
   final _t = Stopwatch();
-  static const _delay = Duration(microseconds: 1);
+  final _delay = Duration(microseconds: 1);
 
   // params
-  int _size = 50;
+  int _size = 100;
   List<int> _values;
   String _method;
 
