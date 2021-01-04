@@ -124,6 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _ptr1 = start;
     _ptr2 = mid;
     while (_ptr1 <= mid - 1 || _ptr2 <= end) {
+      if (_shouldStop) return;
       if (_ptr1 > mid - 1) {
         tmp.add(_values[_ptr2]);
         _ptr2++;
