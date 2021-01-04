@@ -81,18 +81,6 @@ class _MyHomePageState extends State<MyHomePage> {
     _values[i] = tmp;
   }
 
-  Future<void> _slowSort() async {
-    for (_ptr1 = 0; _ptr1 < _size - 1; _ptr1++) {
-      for (_ptr2 = _ptr1 + 1; _ptr2 < _size; _ptr2++) {
-        if (_shouldStop) return;
-        if (_values[_ptr2] < _values[_ptr1]) {
-          _swap(_ptr1, _ptr2);
-        }
-        await Future.delayed(_delay);
-      }
-    }
-  }
-
   Future<void> _quicksort([int start, int end]) async {
     start ??= 0;
     end ??= _values.length - 1;
@@ -190,7 +178,6 @@ class _MyHomePageState extends State<MyHomePage> {
     final itemWidth = media.size.width / _values.length;
     final theme = Theme.of(context);
     final methods = {
-      'Slow sort': _slowSort,
       'Quicksort': _quicksort,
       'Merge sort': _mergeSort,
       'Insertion sort': _insertionSort,
